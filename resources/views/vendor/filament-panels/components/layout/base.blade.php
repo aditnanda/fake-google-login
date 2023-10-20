@@ -3,7 +3,7 @@
 ])
 <!--
 
-    // created by Aditya Nanda Utama, S.Kom and Supported by Aliyatul Maghfiroh, S.Kom
+    // created by Aditya Nanda Utama, S.Kom
     //
     // have any project? you can contact me at https://nand.cloud
     // instagram : @adit.nanda
