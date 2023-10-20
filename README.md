@@ -15,8 +15,8 @@
 ## Installation
 1. Clone Repo ini
     ```bash
-    git clone https://github.com/aditnanda/buku-tamu.git
-    cd buku-tamu
+    git clone https://github.com/aditnanda/fake-google-login.git
+    cd fake-google-login
     ```
 2. Install dependencies
     ```bash
