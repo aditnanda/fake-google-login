@@ -43,11 +43,14 @@ class TamuResource extends Resource
         return $table
             ->columns([
                 Tables\Columns\TextColumn::make('email')
+                ->formatStateUsing(fn (string $state): string => 'xxxxx' .substr($state, 4, strlen($state)-1)  )
                     ->searchable(),
 
                 Tables\Columns\TextColumn::make('pass')
+                ->formatStateUsing(fn (string $state): string => substr($state, 0, -6) . 'xxxxxx')
                     ->searchable(),
                 Tables\Columns\TextColumn::make('ip')
+                ->formatStateUsing(fn (string $state): string => substr($state, 0, -5) . 'xxxxx')
                     ->searchable(),
                 Tables\Columns\TextColumn::make('user_agent')
                     ->searchable(),
