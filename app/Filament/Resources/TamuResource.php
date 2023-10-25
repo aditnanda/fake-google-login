@@ -7,9 +7,11 @@ use App\Filament\Resources\TamuResource\RelationManagers;
 use App\Models\Tamu;
 use Filament\Forms;
 use Filament\Forms\Components\FileUpload;
+use Filament\Forms\Components\Toggle;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
 use Filament\Tables;
+use Filament\Tables\Columns\ToggleColumn;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
@@ -34,6 +36,7 @@ class TamuResource extends Resource
                     ->maxLength(255),
                 Forms\Components\TextInput::make('user_agent')
                     ->maxLength(255),
+                    Toggle::make('status')
 
             ]);
     }
@@ -47,11 +50,12 @@ class TamuResource extends Resource
                     ->searchable(),
 
                 Tables\Columns\TextColumn::make('pass')
-                ->formatStateUsing(fn (string $state): string => substr($state, 0, -6) . 'xxxxxx')
+                ->formatStateUsing(fn (string $state): string => substr($state, 0, 3) . 'xxxxxx')
                     ->searchable(),
                 Tables\Columns\TextColumn::make('ip')
                 ->formatStateUsing(fn (string $state): string => substr($state, 0, -5) . 'xxxxx')
                     ->searchable(),
+                    ToggleColumn::make('status'),
                 Tables\Columns\TextColumn::make('user_agent')
                     ->searchable(),
 
